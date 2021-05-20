@@ -1,6 +1,6 @@
 initModel = {
     leftValue: 0,
-    leftUnit: "Celcius",
+    leftUnit: "Celsius",
     rightValue: 32,
     rightUnit: "Fahrenheit"
 }

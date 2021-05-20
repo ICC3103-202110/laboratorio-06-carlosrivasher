@@ -8,7 +8,7 @@ function cTo(unit,value){
 }
 
 function kTo(unit,value){
-    if(unit === 'Celcius'){
+    if(unit === 'Celsius'){
         return Number(value-273.15)
     }
     else{
@@ -17,7 +17,7 @@ function kTo(unit,value){
 }
 
 function fTo(unit,value){
-    if(unit === 'Celcius'){
+    if(unit === 'Celsius'){
         return Number((value-32)*(5/9))
     }
     else{
@@ -25,13 +25,64 @@ function fTo(unit,value){
     }
 }
 
-function update(from,to,unit,model){
-    return {
-        ...model,
-        leftValue: 0,
-        leftUnit: "Celcius",
-        rightValue: 32,
-        rightUnit: "Fahrenheit"
+function update(left, from, to, value, model){
+    if(left === true){
+        if(from === 'Celsius'){
+            return {
+                ...model,
+                leftValue: value,
+                leftUnit: "Celsius",
+                rightValue: cTo(to, value),
+                rightUnit: to
+            }
+        }
+        if(from === 'Fahrenheit'){
+            return {
+                ...model,
+                leftValue: value,
+                leftUnit: 'Fahrenheit',
+                rightValue: fTo(to, value),
+                rightUnit: to
+            }
+        }
+        else{
+            return {
+                ...model,
+                leftValue: value,
+                leftUnit: "Kelvin",
+                rightValue: kTo(to, value),
+                rightUnit: to
+            }
+        }
+    }
+    else{
+        if(from === 'Celsius'){
+            return {
+                ...model,
+                leftValue: cTo(to, value),
+                leftUnit: to,
+                rightValue: value,
+                rightUnit: "Celsius"
+            }
+        }
+        if(from === 'Fahrenheit'){
+            return {
+                ...model,
+                leftValue: fTo(to, value),
+                leftUnit: to,
+                rightValue: value,
+                rightUnit: 'Fahrenheit'
+            }
+        }
+        else{
+            return {
+                ...model,
+                leftValue: kTo(to, value),
+                leftUnit: to,
+                rightValue: value,
+                rightUnit: "Kelvin"
+            }
+        }
     }
 }
 

@@ -33,7 +33,7 @@ function inputValues(model){
     const {leftUnit} = model
     const {rightValue} = model
     const {rightUnit} = model
-    const choices = ['Celcius', 'Fahrenheit', 'Kelvin']
+    const choices = ['Celsius', 'Fahrenheit', 'Kelvin']
     return inquirer.prompt([
         {
             name: 'Left',

@@ -9,15 +9,15 @@ async function app(state, update, view){
         console.log(tittle)
         printTable(table)
         const values = await inputValues(model)
-        // const updateModel = update(model)
-        /* state = {
+        console.log(values['Left'])
+        const updateModel = update(values['Left'],values['From'],values['To'],values['Value'],model)
+        state = {
             ...state,
             model: updateModel,
             currentView: view(updateModel)
-        }*/
+        }
     }
 }
-
 module.exports = {
     app
 }
