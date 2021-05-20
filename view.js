@@ -43,7 +43,7 @@ function inputValues(model){
         },
         {
             name: 'Value',
-            type: 'input',
+            type: 'number',
             message: 'Temperature value to convert?',
             default: 0
         },

@@ -9,7 +9,6 @@ async function app(state, update, view){
         console.log(tittle)
         printTable(table)
         const values = await inputValues(model)
-        console.log(values['Left'])
         const updateModel = update(values['Left'],values['From'],values['To'],values['Value'],model)
         state = {
             ...state,

@@ -1,27 +1,36 @@
 function cTo(unit,value){
     if(unit === 'Fahrenheit'){
-        return Number(value*(9/5)+32)
+        return (value*(9/5)+32)
+    }
+    if(unit === 'Kelvin'){
+        return (value+273.15)
     }
     else{
-        return Number(value+273.15)
+        return value
     }
 }
 
 function kTo(unit,value){
     if(unit === 'Celsius'){
-        return Number(value-273.15)
+        return (value-273.15)
+    }
+    if(unit === 'Fahrenheit'){
+        return ((value-273.15)*(9/5)+32)
     }
     else{
-        return Number((value-273.15)*(9/5)+32)
+        return value
     }
 }
 
 function fTo(unit,value){
     if(unit === 'Celsius'){
-        return Number((value-32)*(5/9))
+        return ((value-32)*(5/9))
+    }
+    if(unit === 'Kelvin'){
+        return ((value-32)*(5/9)+273.15)
     }
     else{
-        return Number((value-32)*(5/9)+273.15)
+        return value
     }
 }
 
