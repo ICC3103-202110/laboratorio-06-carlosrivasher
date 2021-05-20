@@ -33,6 +33,7 @@ function inputValues(model){
     const {leftUnit} = model
     const {rightValue} = model
     const {rightUnit} = model
+    const choices = ['Celcius', 'Fahrenheit', 'Kelvin']
     return inquirer.prompt([
         {
             name: 'Left',
@@ -41,10 +42,22 @@ function inputValues(model){
             default: Boolean
         },
         {
-            name: 'Temperature',
+            name: 'Value',
             type: 'input',
             message: 'Temperature value to convert?',
             default: 0
+        },
+        {
+            name: 'From',
+            type: 'list',
+            message: 'From?',
+            choices: choices
+        },
+        {
+            name: 'To',
+            type: 'list',
+            message: 'To?',
+            choices: choices
         }
     ])
 }
